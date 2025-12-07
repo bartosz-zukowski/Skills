@@ -1,0 +1,7 @@
+# requirements for this project
+# Add packages with: pip install <package>==<version>
+# Freeze installed packages back into this file with:
+#   pip freeze > requirements.txt
+
+# Example runtime dependency (uncomment if needed):
+# requests>=2.31.0
