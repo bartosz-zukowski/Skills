@@ -11,6 +11,5 @@ def solution(A):
     return 1
 
 
-print(solution(A))
 print(solution([1, 2, 3]))
 print(solution([-1, -3]))
