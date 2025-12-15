@@ -35,3 +35,38 @@ def clean_solution(A):
   return min(roznice)
 
 print(clean_solution([3,1,2,4,3]))
+
+
+"""
+missing integer   --- gdy sa ujemne liczby
+"""
+A = [1, 3, 6, 4, 1, 2]
+
+def missing_integer(A):
+  # podziele wzgledem osi na dodatnie i ujemne zbiory
+  positive = set()
+  negative = set()
+  for element in A:
+    if element <= 0:
+      negative.add(element)
+    else:
+      positive.add(element)
+  # jezeli dodatni jest pusty to zwracam 1, ujemna czesc mnie nie interesuje
+  #print(negative)
+  #print(positive)
+  if not positive:
+    return 1
+  else:
+    check_sum = (len(positive)+1)*(len(positive) + 2) // 2
+    positive_sum = sum(positive)
+    #print(check_sum)
+    #print(positive_sum)
+    if positive_sum == check_sum:
+      return max(positive) + 1
+    else:
+      return check_sum - positive_sum 
+
+
+print(missing_integer(A))
+print(missing_integer([1, 2, 3]))
+print(missing_integer([-1, -3]))
